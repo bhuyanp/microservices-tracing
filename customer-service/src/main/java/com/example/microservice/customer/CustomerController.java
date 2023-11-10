@@ -46,7 +46,7 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Update customer credit score")
     @PatchMapping(path=URI+"/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Customer> getCustomerById(@PathVariable int id, @RequestParam(required = true) int creditScore){
+    public ResponseEntity<Customer> updateCustomerCreditScore(@PathVariable int id, @RequestParam(required = true) int creditScore){
         return customerService.updateCustomerCreditScore(id, creditScore)
                 .map(customer-> ResponseEntity.ok(customer))
                 .orElseGet(()->ResponseEntity.notFound().build());

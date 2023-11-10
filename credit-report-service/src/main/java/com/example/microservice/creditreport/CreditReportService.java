@@ -17,7 +17,7 @@ public class CreditReportService {
         log.info("Sending credit score to customer service for customer "+customer);
         webClient
                 .patch()
-                .uri("http://localhost:8080/api/v1/customer/"+customer.getId()+"?creditScore="+ RandomGenerator.getDefault().nextInt(600,10))
+                .uri("http://localhost:8080/api/v1/customer/"+customer.getId()+"?creditScore="+ RandomGenerator.getDefault().nextInt(600,650))
                 .exchangeToMono(result-> Mono.just(result)).block();
 
     }
