@@ -5,10 +5,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>api-gateway</module>
-        <module>credit-report-service</module>
         <module>customer-service</module>
-        <module>order</module>
-        <module>fraud-detection</module>
+        <module>credit-report-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -26,10 +24,6 @@
         <spring-cloud.version>2022.0.4</spring-cloud.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>

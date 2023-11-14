@@ -12,10 +12,10 @@ import java.util.random.RandomGenerator;
 @Service
 @Slf4j
 public class CreditReportService {
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
     public void updateCreditScore(Customer customer){
         log.info("Sending credit score to customer service for customer "+customer);
-        webClient
+        webClientBuilder.build()
                 .patch()
                 .uri("http://localhost:8080/api/v1/customer/"+customer.getId()+"?creditScore="+ RandomGenerator.getDefault().nextInt(600,650))
                 .exchangeToMono(result-> Mono.just(result)).block();

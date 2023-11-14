@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class CreditReportWebClientConfig {
 
     @Bean
-    public WebClient getWebClient(){
-        return WebClient.builder().build();
+    public WebClient.Builder webclientBuilder(){
+        return WebClient.builder();
     }
 }
